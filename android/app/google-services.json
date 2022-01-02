@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "704938442721",
+    "firebase_url": "https://darshan-jewellers-a076c-default-rtdb.firebaseio.com",
+    "project_id": "darshan-jewellers-a076c",
+    "storage_bucket": "darshan-jewellers-a076c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704938442721:android:67e2b89ffc4f3002441ca0",
+        "android_client_info": {
+          "package_name": "com.dj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704938442721-p4758hr9slfarml3f3acjjrd8cg6sc5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP2m9DI5qdv4lQHXg7bkLuw-0l_eWZPNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704938442721-p4758hr9slfarml3f3acjjrd8cg6sc5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
