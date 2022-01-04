@@ -14,7 +14,7 @@ export default function WelcomeScreen(props) {
     const [loading, setloading] = useState(true)
     const components = [
         { label: 'Buy Gold', image: 'bank',screen:'Home' },
-        { label: 'Sell Gold', image: 'shopping-cart',screen:'Home' },
+        
         { label: 'Live price', image: 'balance-scale',screen:'Live' },
     ]
     useEffect(() => {
