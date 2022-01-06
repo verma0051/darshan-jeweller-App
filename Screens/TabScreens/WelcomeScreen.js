@@ -13,7 +13,7 @@ export default function WelcomeScreen(props) {
     const [price, setPrice] = useState(null)
     const [loading, setloading] = useState(true)
     const components = [
-        { label: 'Buy Gold', image: 'bank',screen:'Home',touch:'https://rzp.io/l/q7O9TDNw1' },
+        { label: 'Book Gold Price', image: 'bank',screen:'Home',touch:'https://rzp.io/l/q7O9TDNw1' },
         { label: 'Live price', image: 'balance-scale',screen:'Live' },
     ]
     useEffect(() => {
