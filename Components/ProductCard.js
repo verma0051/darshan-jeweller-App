@@ -5,28 +5,26 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import { ActivityIndicator } from 'react-native';
-import { Linking } from 'react-native';
+
 import axios from 'axios';
 import { Button } from 'react-native-paper';
 
 const ProductCard = ({ item, liked }) => {
     const [price, setPrice] = useState(null)
-    const [showPrice, setShowPrice] = useState(false)
+    const [showPrice, setShowPrice] = useState(true)
     const [isLiked, setIsLiked] = useState(false)
     const [loading, setLoading] = useState(false)
     const user = auth().currentUser
 
     useEffect(() => { setIsLiked(liked) }, [liked])
     axios.get('https://www.metals-api.com/api/latest?access_key=vwqi02ogvgz9044bjgjo9rc5a1j9if6yw5cteacjgh58py2281k03ur05zns&base=INR&symbols=XAU')
-        .then((res) => {
-            let perounce = res.data.rates.XAU
-            let price = parseInt(perounce)
-            price = parseInt(price / 31)
-            price = parseInt(price + price * 0.13)
-            price?setPrice(price):setPrice(49400)
+        .then((res)=>{
+            let perounce=res.data.rates.XAU
+            let price=parseInt(perounce)
+            price=parseInt(price/31)
+            price=parseInt(price+price*0.13)
+            setPrice(price)
         })
-        .catch(e => console.log(e))
-
     const add = () => {
         setLoading(true)
         firestore().collection("favs").doc(user.email).collection("favs").doc(item.id).set(item).then(() => { setIsLiked(true); setLoading(false); })
@@ -50,7 +48,9 @@ const ProductCard = ({ item, liked }) => {
                 >
                     {showPrice?"See Price":"Hide Price"}
                 </Button>
-                {!showPrice&&<Text style={styles.weight} >Price : {parseInt(item.weight)*price}</Text>}
+                {!showPrice&&<Text style={styles.weight} >
+                    Price : {parseInt((item.weight)*4946)}
+                    </Text>}
                 </View>
                 <TouchableOpacity onPress={!isLiked ? add : remove} style={{ position: 'absolute', right: 5, top: 10 }}>
                     {loading ?
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     },
     weight: {
         color: "#000",
+        fontWeight: 'bold',
     },
     img: {
         width: '100%',

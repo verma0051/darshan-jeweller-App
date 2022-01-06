@@ -2,11 +2,20 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+// import te from 'tradingeconomics'
 
 const LivePrice = ({ navigation }) => {
     const [price, setPrice] = useState(null)
     useEffect(() => {
-        axios.get('https://www.metals-api.com/api/latest?access_key=0slgldq256non6z4bi4x6ttfz4nz2k33rjx0p17oci3stgmd6k9c8cm7sfoj&base=INR&symbols=XAU')
+
+        // te.login('h2o67dy6otxxdzw:gpuqjykfl2d6t8w');
+
+
+
+        // data = te.getMarketSnap(marketsField = 'commodities').then(function(data){
+        //     console.log(data)     
+        // }); 
+        axios.get('https://www.metals-api.com/api/latest?access_key=96m7fvel46nopqhmybqx2672m79on1b76fm3440brq3bxpej8s87v24sbab8&base=INR&symbols=XAU')
         .then((res)=>{
             let perounce=res.data.rates.XAU
             let price=parseInt(perounce)
